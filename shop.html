@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | GABLE Home Remodeling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+    /* Nav */
+        #navbar{
+            height: 15vh;
+        }
+        nav{
+            margin-top: -2%;
+        }
+        .logo img{
+            width: 30%;
+            margin-top: -8%;
+        }
+
+    @media(max-width: 720px){
+        #text{
+            margin-left: -5%;
+        }
+    }
+</style>
+<body class="bg-white font-sans text-gray-900">
+
+    <header id="navbar" class="absolute w-full z-[60] text-white bg-black/40 backdrop-blur-md border-b border-white/10">
+        <div class="flex justify-between items-center px-6 py-6 md:px-16">
+            <div class="logo">
+               <img src="img/Gable logo.png" alt="logo-img">
+            </div>
+
+            <nav class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-yellow-500 transition">Home</a>
+                <a href="about.html" class="hover:text-yellow-500 transition">About</a>
+                <a href="portfolio.html" class="hover:text-yellow-500 transition">Portfolio</a>
+                <a href="blog.html" class="hover:text-yellow-500 transition">Blog</a>
+                <a href="shop.html" class="text-yellow-500">Shop</a>
+            </nav>
+            <div class="flex items-center space-x-5">
+                <button class="relative">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="absolute -top-2 -right-2 bg-yellow-600 text-[8px] font-bold px-1.5 rounded-full">0</span>
+                </button>
+                <button onclick="toggleDropdown()" class="lg:hidden text-white focus:outline-none">
+                    <svg id="menuIcon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden lg:hidden bg-black/95 border-t border-white/10 overflow-hidden">
+            <nav class="flex flex-col px-6 py-8 space-y-6 text-xs font-bold uppercase tracking-[0.3em]">
+                <a href="index.html" class="hover:text-yellow-500 transition">Home</a>
+                <a href="about.html" class="hover:text-yellow-500 transition">About</a>
+                <a href="portfolio.html" class="hover:text-yellow-500 transition">Portfolio</a>
+                <a href="blog.html" class="hover:text-yellow-500 transition">Blog</a>
+                <a href="shop.html" class="text-yellow-500">Shop</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="pt-40 pb-20 px-6 md:px-16 bg-black text-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-6">
+            <div class="max-w-2xl">
+                <p class="text-[10px] font-black uppercase tracking-[0.5em] mb-4 text-yellow-500">The Curation</p>
+                <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none">Objects <br>for Living</h1>
+            </div>
+            <p class="text-gray-400 text-sm uppercase tracking-widest max-w-xs pb-2">
+                A highly edited selection of materials and furniture used in our signature projects.
+            </p>
+        </div>
+    </section>
+
+    <div class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex space-x-8 text-[10px] font-bold uppercase tracking-widest overflow-x-auto no-scrollbar whitespace-nowrap">
+                <button class="text-black border-b border-black pb-1">All Objects</button>
+                <button class="text-gray-400 hover:text-black transition">Furniture</button>
+                <button class="text-gray-400 hover:text-black transition">Hardware</button>
+                <button class="text-gray-400 hover:text-black transition">Lighting</button>
+            </div>
+            <div class="hidden md:flex text-[10px] font-bold uppercase tracking-widest text-gray-400 space-x-4">
+                <span>Filter</span>
+                <span>/</span>
+                <span class="text-black">Sort: Newest</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-20 px-6 md:px-16 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
+            
+            <div class="group cursor-pointer">
+                <div class="aspect-[1/1] bg-gray-50 flex items-center justify-center overflow-hidden relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=800" alt="Chair" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all"></div>
+                    <button class="absolute bottom-4 left-4 right-4 bg-white text-black py-3 text-[10px] font-black uppercase tracking-widest translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
+                        Add to Cart — $1,240
+                    </button>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-tighter">Monolith Lounge Chair</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Oak & Bouclé</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer">
+                <div class="aspect-[1/1] bg-gray-50 flex items-center justify-center overflow-hidden relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800" alt="Lamp" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all"></div>
+                    <button class="absolute bottom-4 left-4 right-4 bg-white text-black py-3 text-[10px] font-black uppercase tracking-widest translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
+                        Add to Cart — $850
+                    </button>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-tighter">T-Light Column Lamp</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Brushed Brass</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer">
+                <div class="aspect-[1/1] bg-gray-50 flex items-center justify-center overflow-hidden relative mb-6">
+                    <img src="https://images.unsplash.com/photo-1581428982868-e410dd047a90?auto=format&fit=crop&q=80&w=800" alt="Hardware" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all"></div>
+                    <button class="absolute bottom-4 left-4 right-4 bg-white text-black py-3 text-[10px] font-black uppercase tracking-widest translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
+                        Add to Cart — $120
+                    </button>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-tighter">Brutalist Door Handle</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Smoked Oak / Steel</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer">
+                <div class="aspect-[1/1] bg-gray-50 flex items-center justify-center overflow-hidden relative mb-6">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.H--OhuJdwkULrfoCAfIzfAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Vase" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <button class="absolute bottom-4 left-4 right-4 bg-white text-black py-3 text-[10px] font-black uppercase tracking-widest translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
+                        Add to Cart — $420
+                    </button>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-tighter">Raw Clay Vessel</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Hand-thrown Ceramic</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group cursor-pointer">
+    <div class="aspect-[1/1] bg-gray-50 flex items-center justify-center overflow-hidden relative mb-6">
+        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&q=80&w=800" alt="Coffee Table" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all"></div>
+        <button class="absolute bottom-4 left-4 right-4 bg-white text-black py-3 text-[10px] font-black uppercase tracking-widest translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
+            Add to Cart — $3,200
+        </button>
+    </div>
+    <div class="flex justify-between items-start">
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-tighter">Carrara Plinth Table</h3>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Honed Italian Marble</p>
+        </div>
+    </div>
+</div>
+
+<div class="group cursor-pointer">
+    <div class="aspect-[1/1] bg-gray-50 flex items-center justify-center overflow-hidden relative mb-6">
+        <img src="https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&q=80&w=800" alt="Wall Sconce" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all"></div>
+        <button class="absolute bottom-4 left-4 right-4 bg-white text-black py-3 text-[10px] font-black uppercase tracking-widest translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
+            Add to Cart — $580
+        </button>
+    </div>
+    <div class="flex justify-between items-start">
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-tighter">Arc Wall Sconce</h3>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Solid Walnut / Frosted Glass</p>
+        </div>
+    </div>
+</div>
+
+<div class="group cursor-pointer">
+    <div class="aspect-[1/1] bg-gray-50 flex items-center justify-center overflow-hidden relative mb-6">
+        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800" alt="Linen Fabric" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all"></div>
+        <button class="absolute bottom-4 left-4 right-4 bg-white text-black py-3 text-[10px] font-black uppercase tracking-widest translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
+            Add to Cart — $245
+        </button>
+    </div>
+    <div class="flex justify-between items-start">
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-tighter">Belgium Flax Drapery</h3>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Oatmeal Heavyweight Linen</p>
+        </div>
+    </div>
+</div>
+
+<div class="group cursor-pointer">
+    <div class="aspect-[1/1] bg-gray-50 flex items-center justify-center overflow-hidden relative mb-6">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800" alt="Bookends" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all"></div>
+        <button class="absolute bottom-4 left-4 right-4 bg-white text-black py-3 text-[10px] font-black uppercase tracking-widest translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
+            Add to Cart — $190
+        </button>
+    </div>
+    <div class="flex justify-between items-start">
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-tighter">Geometric Bookends</h3>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Unfilled Travertine</p>
+        </div>
+    </div>
+</div>
+
+<div class="group cursor-pointer">
+    <div class="aspect-[1/1] bg-gray-50 flex items-center justify-center overflow-hidden relative mb-6">
+        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800" alt="Cabinet Hardware" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all"></div>
+        <button class="absolute bottom-4 left-4 right-4 bg-white text-black py-3 text-[10px] font-black uppercase tracking-widest translate-y-12 group-hover:translate-y-0 transition-transform duration-300">
+            Add to Cart — $45
+        </button>
+    </div>
+    <div class="flex justify-between items-start">
+        <div>
+            <h3 class="text-sm font-bold uppercase tracking-tighter">Foundry Cabinet Pull</h3>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Hand-forged Iron</p>
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        
+    </section>
+
+    <section class="py-24 px-6 md:px-16 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 bg-gray-50 p-12">
+            <div class="max-w-lg">
+                <h2 class="text-3xl font-black uppercase tracking-tighter mb-4">In Search of the Bespoke?</h2>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                    Our studio creates custom furniture pieces designed specifically for your space. Contact our design team for custom commission inquiries.
+                </p>
+            </div>
+            <a href="#" class="border-2 border-black px-10 py-5 text-[10px] font-black uppercase tracking-widest hover:bg-black hover:text-white transition">Inquire Now</a>
+        </div>
+    </section>
+
+    <footer class="bg-black py-16 px-6 md:px-16 text-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] font-black uppercase tracking-[0.4em] text-gray-600">
+            <p>Gable Shop 2026</p>
+            <div class="flex space-x-8 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition">Shipping</a>
+                <a href="#" class="hover:text-white transition">Returns</a>
+                <a href="#" class="hover:text-white transition">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDropdown() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

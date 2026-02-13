@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GABLE Home Remodeling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Nav */
+        #navbar{
+            height: 15vh;
+        }
+        .logo img{
+            width: 30%;
+        }
+
+        /* 1. Make the slider fill the background */
+        .gallery-slider {
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Push behind text */
+        }
+
+        .gallery-slider .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 2. Dark Overlay to make text pop */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Adjust darkness here */
+            z-index: 0;
+        }
+
+        /* Pagination Styling */
+        .gallery-slider .swiper-pagination {
+            bottom: 40px !important;
+            left: 50% !important;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
+
+        .swiper-pagination-bullet {
+            border-radius: 10% !important;
+            width: 1.5rem !important;
+            height: 0.2rem !important;
+            background: #fff !important;
+            opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1 !important;
+            background: #eab308 !important;
+        }
+
+
+       /* body { font-family: 'Inter', sans-serif; }*/
+        .section-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; }
+        .sub-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: #6c757d; }
+        
+        /* Blog Card Styling */
+        .blog-card { border: none; transition: transform 0.5s ease; cursor: pointer; }
+        .blog-card:hover { transform: translateY(-5px); }
+        .blog-card img { height: 250px; object-fit: cover; width: 100%; }
+        .blog-date { font-size: 0.65rem; font-weight: 700; color: #adb5bd; letter-spacing: 0.1em; }
+        .blog-title { font-weight: 900; font-size: 1rem; text-transform: uppercase; margin-top: 15px; }
+
+        /* Dark Footer Styling */
+    
+        .bg-dark {
+            background-color: #1d2549 !important; /* Deep dark shade from the image */
+        }
+        .tracking-widest {
+            letter-spacing: 0.2em;
+        }
+        .social-icons a:hover {
+            color: #fff !important;
+            transition: 0.3s ease;
+        }
+        .hover-white:hover {
+            color: #fff !important;
+            transition: 0.3s ease;
+        }
+        .border-top {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        @media(max-width: 720px){
+            #swiper{
+                height: 82vh;
+            }
+            #form{
+                margin-bottom: 5%;
+            }
+        }
+    </style>
+</head>
+<body class="">
+    
+    <header id="navbar" class="absolute w-full z-[60] flex justify-between items-center px-6 py-6 md:px-16 text-white bg-black/20 backdrop-blur-sm">
+        <!--<div class="text-2xl font-black tracking-tighter italic">GABLE</div>-->
+        <div class="logo">
+            <img src="img/Gable logo.png" alt="logo-img">
+        </div>
+
+        <nav class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+            <a href="index.html" class="text-yellow-500">Home</a>
+            <a href="about.html" class="hover:text-yellow-500 transition">About</a>
+            <a href="portfolio.html" class="hover:text-yellow-500 transition">Portfolio</a>
+            <a href="blog.html" class="hover:text-yellow-500 transition">Blog</a>
+            <a href="#" class="hover:text-yellow-500 transition">Shop</a>
+        </nav>
+
+        <div class="flex items-center space-x-6">
+            <div class="hidden sm:block text-right">
+                <p class="text-[10px] uppercase text-gray-300">Call Us Today</p>
+                <p class="text-sm font-bold">+1 800 555 01 23</p>
+            </div>
+            
+            <button id="menu-btn" class="lg:hidden text-2xl focus:outline-none" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <button class="hidden md:block bg-blue-600 px-5 py-2 text-xs font-bold uppercase tracking-widest hover:bg-blue-700 transition" style="border-radius: 16px;">
+                Search +
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md flex-col items-center py-8 space-y-6 lg:hidden border-t border-white/10">
+            <a href="index.html" class="text-yellow-500 text-sm font-bold uppercase">Home</a>
+            <a href="about.html" class="hover:text-yellow-500 text-sm font-bold uppercase transition">About</a>
+            <a href="portfolio.html" class="hover:text-yellow-500 text-sm font-bold uppercase transition">Portfolio</a>
+            <a href="blog.html" class="hover:text-yellow-500 text-sm font-bold uppercase transition">Blog</a>
+            <a href="shop.html" class="hover:text-yellow-500 text-sm font-bold uppercase transition">Shop</a>
+            <button class="bg-blue-600 px-5 py-3 text-xs font-bold uppercase tracking-widest">Search +</button>
+        </div>
+    </header>
+
+    <section id="swiper" class="relative h-screen w-full flex flex-col justify-center items-center text-center text-white px-4 overflow-hidden">
+        
+        <div class="swiper gallery-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/13.jpeg" alt="img"></div>
+                <div class="swiper-slide"><img src="img/11.jpeg" alt="img"></div>
+                <div class="swiper-slide"><img src="img/12.jpeg" alt="img"></div>
+                <div class="swiper-slide"><img src="img/R.jpg" alt="img"></div>
+                <div class="swiper-slide"><img src="img/R (1).jpg" alt="img"></div>
+                <div class="swiper-slide"><img src="img/9.jpeg" alt="img"></div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="relative z-10">
+            <h1 class="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+                Your Comfort Is Our <br> Only Priority
+            </h1>
+            <a href="#services" class="bg-yellow-500 hover:bg-yellow-600 text-black font-black py-3 px-6 text-sm tracking-widest transition" style="border-radius: 12px;">
+                SERVICES +
+            </a>
+        </div>
+
+    </section>
+
+    <section id="services" class="py-24 bg-gray-200 px-6 md:px-16 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+            <span class="text-blue-600 font-bold text-xs tracking-[0.3em] uppercase block mb-4">Home Improvements</span>
+            <h2 class="text-4xl font-black uppercase leading-tight mb-6">Top-Notch House <br> Remodeling Services</h2>
+            <p class="text-gray-500 leading-relaxed mb-8 max-w-md">Professional architectural solutions and high-end remodeling for modern homeowners looking for quality and reliability.</p>
+            <button class="bg-blue-600 text-white px-6 py-3 font-bold text-xs tracking-widest hover:bg-blue-800 transition" style="border-radius: 12px;">ANALYZE +</button>
+        </div>
+        <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white p-10 shadow-2xl border-t-4 border-blue-600 text-center group hover:-translate-y-2 transition-transform">
+                <i class="fa-solid fa-compass-drafting text-3xl text-blue-600 mb-4"></i>
+                <h3 class="font-bold uppercase text-sm tracking-widest">Planning</h3>
+            </div>
+            <div class="bg-gray-50 p-10 text-center border-t-4 border-transparent hover:border-blue-600 transition shadow-sm ">
+                <i class="fa-solid fa-hammer text-3xl text-blue-600 mb-4"></i>
+                <h3 class="font-bold uppercase text-sm tracking-widest">Repairs</h3>
+            </div>
+            <div class="bg-gray-50 p-10 text-center border-t-4 border-transparent hover:border-blue-600 transition shadow-sm">
+                <i class="fa-solid fa-couch text-3xl text-blue-600 mb-4"></i>
+                <h3 class="font-bold uppercase text-sm tracking-widest">Interior</h3>
+            </div>
+            <div class="bg-white p-10 shadow-2xl border-t-4 border-blue-600 text-center group hover:-translate-y-2 transition-transform">
+                <i class="fa-solid fa-droplet text-3xl text-blue-600 mb-4"></i>
+                <h3 class="font-bold uppercase text-sm tracking-widest">Plumbing</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="grid g-4 grid-cols-2 md:grid-cols-4 h-64 md:h-80 overflow-hidden">
+        <div class="relative group overflow-hidden border-r border-white">
+           <a href="#bedroom">
+              <img src="img/16.jpeg" alt="Bedroom" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+           </a> 
+        </div>
+        <div class="relative group overflow-hidden border-r border-white">
+            <img src="img/7.jpeg" alt="Dining Area" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+        </div>
+        <div class="relative group overflow-hidden border-r border-white">
+            <img src="img/15.jpeg" alt="Minimalist Room" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+        </div>
+        <div class="relative group overflow-hidden">
+            <img src="img/4.jpeg" alt="Modern Bathroom" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+        </div>
+    </section>
+
+
+    <section class="py-24 bg-gray-50 text-center px-6">
+        <span class="text-gray-400 font-bold text-xs tracking-widest uppercase block mb-4">What Clients Say</span>
+        <h2 class="text-3xl font-black uppercase mb-12">Customer Reviews and Testimonials fOR <br> home improvement</h2>
+        <div class="max-w-3xl mx-auto italic text-gray-600 text-lg leading-loose">
+
+            <div class="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-4 overflow-hidden">
+                <img src="img/Screenshot 2025-10-06 100808.png" alt="Client">
+            </div>
+            <p>"The attention to detail and professional communication from the Gable team was beyond our expectations. Our home feels brand new and perfectly functional."</p>
+            <div class="mt-8">
+                
+                <h4 class="font-black uppercase text-sm tracking-widest text-black">Jane Doe</h4>
+                <p class="text-xs text-blue-600 font-bold uppercase mt-1">Home Owner</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-20 max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-start">
+        <div class="w-full md:w-5/12">
+            <img src="img/8.jpeg" alt="Luxury Living Room" class="w-full h-auto shadow-2xl rounded-sm">
+        </div>
+
+        <div class="w-full md:w-7/12">
+            <span class="text-blue-600 font-bold text-xs tracking-[0.4em] uppercase block mb-4">We Improve Your Home</span>
+            <h2 class="text-4xl md:text-5xl font-black uppercase leading-tight mb-8">Inspiring Ideas and Expert <br> Advice for Your House</h2>
+            
+            <p class="text-gray-500 text-lg leading-relaxed mb-10 max-w-xl">
+                Modernize your living space with our expert craftsmanship and architectural design services. We provide professional advice on sustainable materials and space optimization.
+            </p>
+
+            <div class="mb-16">
+                <img src="img/6.jpeg" alt="Modern Kitchen" class="w-full h-auto shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-300" style="margin-top: -5%;">
+        <div class="container">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-10 border-t border-gray-100" style="justify-content: center; padding-bottom: 3%;">
+                <div class="text-center md:text-left">
+                    <h3 class="text-5xl font-black text-gray-900 mb-2">93+</h3>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Projects</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-5xl font-black text-gray-900 mb-2">65+</h3>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">People</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-5xl font-black text-gray-900 mb-2">10+</h3>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Years</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-5xl font-black text-gray-900 mb-2">15+</h3>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Offices</p>
+                </div>
+            </div>
+        </div>
+         
+    </section>
+
+    <section class="relative h-[75vh] w-full overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <video 
+                id="scrollVideo" 
+                src="img/Video 2026.mp4" 
+                muted 
+                loop 
+                playsinline 
+                class="w-full h-full object-cover">
+            </video>
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+
+        <div class="relative z-10 px-6 text-center">
+            <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">
+                Our Mission
+            </h2>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-100 font-light leading-relaxed">
+                Crafting sustainable, modern living spaces that bridge the gap 
+                between innovative architecture and the comfort of home.
+            </p>
+        </div>
+    </section>
+
+   <section class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <span class="sub-label">Our Blog</span>
+                <h2 class="section-title mt-2">Learn More About Our Company <br> By Reading The News</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="blog-card card h-100">
+                        <img src="img/2.jpeg" alt="Construction">
+                        <div class="card-body px-0">
+                            <p class="blog-date mb-1">MARCH 12, 2024</p>
+                            <h4 class="blog-title">Safety Starts With Quality And Professional Construction</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Interior">
+                        <div class="card-body px-0">
+                            <p class="blog-date mb-1">FEBRUARY 28, 2024</p>
+                            <h4 class="blog-title">How A Room Addition Can Maximize Your Property's Value</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card card h-100">
+                        <img src="img/3.jpeg" alt="Technical">
+                        <div class="card-body px-0">
+                            <p class="blog-date mb-1">JANUARY 15, 2024</p>
+                            <h4 class="blog-title">Technical Inspection Prior to Every Remodel Job Is Crucial</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6 col-md-4">
+                    <img src="img/10.jpeg" alt="">
+                </div>
+
+                <div id="form" class="col-md-4" style="margin-top: 10%;" >
+                    <h6 class="text-uppercase text-4xl text-black fw-bold small mb-4 opacity-50 border-bottom pb-2">Have Questions? <br> Get in Touch!</h6>
+                    <form class="row g-3">
+                        <div class="col-md-6"><input type="text" class="form-control form-control-custom" placeholder="NAME"></div>
+                        <div class="col-md-6"><input type="email" class="form-control form-control-custom" placeholder="EMAIL"></div>
+                        <div class="col-12"><textarea class="form-control form-control-custom" rows="2" placeholder="MESSAGE"></textarea></div>
+                        <div class="col-12"><button class="btn btn-primary rounded-4 px-2 py-3 fw-bold text-uppercase w-50 mt-3">Send Message</button></div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container py-4">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <h6 class="text-uppercase fw-bold mb-4 small tracking-widest">Business Hours</h6>
+                <ul class="list-unstyled text-secondary small lh-lg">
+                    <li>Mon-Fri: 9 AM – 5 PM</li>
+                    <li>Saturday: 10 AM – 4 PM</li>
+                    <li>Sunday: Closed</li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h6 class="text-uppercase fw-bold mb-4 small tracking-widest">Office</h6>
+                <ul class="list-unstyled text-secondary small lh-lg">
+                    <li>Gable Inc.</li>
+                    <li>123 Wall Street, Office 414</li>
+                    <li>Berlin, Germany</li>
+                    <li class="mt-2"><a href="mailto:info@gable.com" class="text-secondary text-decoration-none">info@gable.com</a></li>
+                    <li class="mt-1 text-white fw-bold">+1 800 555 01 23</li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h6 class="text-uppercase fw-bold mb-4 small tracking-widest">Links</h6>
+                <ul class="list-unstyled text-secondary small lh-lg">
+                    <li><a href="index.html" class="text-secondary text-decoration-none hover-white">Home</a></li>
+                    <li><a href="#services" class="text-secondary text-decoration-none hover-white">Services</a></li>
+                    <li><a href="about.html" class="text-secondary text-decoration-none hover-white">About Us</a></li>
+                    <li><a href="shop.html" class="text-secondary text-decoration-none hover-white">Shop</a></li>
+                    <li><a href="#" class="text-secondary text-decoration-none hover-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h6 class="text-uppercase fw-bold mb-4 small tracking-widest">Follow Us</h6>
+                <div class="d-flex gap-3 social-icons">
+                    <a href="#" class="text-secondary"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-secondary"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-secondary"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-secondary"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 pt-4 border-top border-secondary">
+            <div class="col text-start">
+                <p class="text-secondary mb-0 fw-bold" style="font-size: 10px; letter-spacing: 1px;">
+                    © GABLE 2026. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+
+    const video = document.getElementById('scrollVideo');
+
+    const options = {
+        root: null, // use the viewport
+        threshold: 0.5 // 0.5 means 50% of the video must be visible to trigger
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+    }, options);
+
+    observer.observe(video);
+
+
+
+
+
+
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = menuBtn.querySelector('i');
+
+        menuBtn.addEventListener('click', () => {
+        // Toggle the 'hidden' class
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+
+        // Optional: Switch icon from Bars to X
+        if (mobileMenu.classList.contains('hidden')) {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        } else {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        }
+    });
+
+
+        const swiper = new Swiper(".gallery-slider", {
+            slidesPerView: 1,
+            loop: true,
+            effect: "fade", // Added fade effect for a premium "Hero" feel
+            fadeEffect: { crossFade: true },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            }
+        });
+    </script>
+    
+</body>
+</html>
