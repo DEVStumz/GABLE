@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Science | GABLE Home Remodeling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    /* Ensure all card images have the same 4:5 aspect ratio */
+    .aspect-\[4\/5\] {
+        aspect-ratio: 4 / 5;
+        position: relative;
+    }
+
+    /* Premium Typography for Blog Headlines */
+    h2.text-xl {
+        font-family: 'Playfair Display', serif; /* Or any serif font you have linked */
+        letter-spacing: -0.02em;
+    }
+
+    /* Subtle line clamp to keep grid aligned if descriptions vary in length */
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-lineclamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+
+    /* Hover effect for the card container */
+    .group:hover h2 {
+        color: #555; /* Subtle shift on text */
+        transition: color 0.3s ease;
+    }
+
+    /* --- Animation Definitions (Subtle Motion Effects) --- */
+
+    /* Base class for elements that will be animated */
+
+    .animate-on-scroll{
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        will-change: opacity, transform,;
+    }
+
+    .animate-on-scroll.animated{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+</style>
+
+<body>
+
+    <div class="bg-gray-50 border-b border-gray-100 px-6 py-4 overflow-x-auto animate-on-scroll fade-in-up delay-4">
+        <div class="max-w-7xl mx-auto flex space-x-10 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap animate-on-scroll fade-in-up">
+            <a href="blog.html" class="text-gray-400 hover:text-black transition">All Stories</a>
+            <a href="design-trends.html" class="text-gray-400 hover:text-black transition">Design Trends</a>
+            <a href="material-science.html" class="text-black border-b border-black pb-1">Material Science</a>
+            <a href="home-technology.html" class="text-gray-400 hover:text-black transition">Home Technology</a>
+            <a href="interviews.html" class="text-gray-400 hover:text-black transition">Interviews</a>
+        </div>
+    </div>
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="row g-5">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://images.unsplash.com/photo-1550418290-a8d86ad674a6?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Recycled Plastic Texture">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Material Science</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">Upcycled Polymer Terrazzo</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">Transforming ocean plastic waste into high-durability, aesthetically striking surfacing materials for modern retail.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Glass Reflection">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Material Science</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">Graphene-Infused Glass</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">How atomic-scale carbon layers are creating ultra-thin, conductive glass that generates its own heat.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://tse2.mm.bing.net/th/id/OIP.eWhtpEw8fAH1-cgLqaLDwgHaJQ?w=800&h=1000&rs=1&pid=ImgDetMain&o=7&rm=3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Metal Texture">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Material Science</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">Liquid Metal Architectural Mesh</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">Exploring the fluid aesthetics of gallium-based alloys in responsive interior partitions.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                        <article class="group">
+                            <div class="aspect-[4/5] bg-gray-200 mb-4 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Material Science</span>
+                            <h2 class="text-xl mt-2">The Texture of Tomorrow</h2>
+                        </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://64.media.tumblr.com/ca772c6604922105fe077c03419a1f47/tumblr_ozyu38wLBJ1qj12cyo2_400.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Lighting">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Material Science</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">Bioluminescent Lighting Solutions</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">How living organisms are being used to create zero-electricity ambient light.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Tech">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Material Science</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">Mycelium: Building with Mushroom Leather</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">The biodegradable future of high-end furniture upholstery.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // --- 2. Scroll-Based Animations (Intersection Observer) ---
+
+        // Setup the observer
+        const animateOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // When the element is in the viewport
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Options for the observer
+            root: null, // viewport as the root
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        // Target all elements with the 'animate-on-scroll' class
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            animateOnScroll.observe(element);
+        });
+
+
+    </script>
+
+</body>
+</html>

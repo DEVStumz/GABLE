@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Technology | GABLE Home Remodeling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<style>
+    /* --- Animation Definitions (Subtle Motion Effects) --- */
+
+    /* Base class for elements that will be animated */
+
+    .animate-on-scroll{
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        will-change: opacity, transform,;
+    }
+
+    .animate-on-scroll.animated{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+</style>
+<body>
+
+    <div class="bg-gray-50 border-b border-gray-100 px-6 py-4 overflow-x-auto animate-on-scroll fade-in-up delay-4">
+        <div class="max-w-7xl mx-auto flex space-x-10 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap animate-on-scroll fade-in-up">
+            <a href="blog.html" class="text-gray-400 hover:text-black transition">All Stories</a>
+            <a href="design-trends.html" class="text-gray-400 hover:text-black transition">Design Trends</a>                
+            <a href="material-science.html" class="text-gray-400 hover:text-black transition">Material Science</a>
+            <a href="home-technology.html" class="text-black border-b border-black pb-1">Home Technology</a>
+            <a href="interviews.html" class="text-gray-400 hover:text-black transition">Interviews</a>
+        </div>
+    </div>
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="row g-5">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Ambient Lighting">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Home Technology</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">Circadian Lighting Systems</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">How smart bulbs are now syncing with your biological clock to improve long-term sleep health.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Home Audio">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Home Technology</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">Invisible Soundscapes</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">The rise of "plaster-in" speakers that turn your entire wall into a high-fidelity acoustic surface.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Smart Home Hub">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Home Technology</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">The End of the Smart Screen</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">Moving toward ambient computing where technology reacts to presence without a physical interface.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://i.pinimg.com/736x/35/ee/da/35eeda10caec07299d1fb16fd797d60c.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Technology">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Home Technology</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">Smart Glass: Beyond the Window</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">Privacy-on-demand technology is finally entering the residential market.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://cassette.sphdigital.com.sg/image/homedecor/ba9527a4c9f1a845bebbfedee878996bc82765b922a2cbdad505dcd0ac483e27?w=1000&q=85" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Kitchen">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Home Technology</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">The Invisible Kitchen Revolution</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">Hidden induction hubs and integrated stone surfaces are making the kitchen disappear.</p>
+                    </article>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <article class="group cursor-pointer">
+                        <div class="aspect-[4/5] overflow-hidden bg-gray-200 mb-4">
+                            <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Home">
+                        </div>
+                        <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-gray-400">Home Technology</span>
+                        <h2 class="text-xl font-medium mt-2 leading-tight">Energy Neutral Homes</h2>
+                        <p class="text-gray-500 text-xs mt-3 line-clamp-2">Smart grid integration and solar-harvesting glass in residential builds.</p>
+                    </article>
+                </div>
+            </div>    
+        </div>
+    </section>
+
+    <script>
+        // --- 2. Scroll-Based Animations (Intersection Observer) ---
+
+        // Setup the observer
+        const animateOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // When the element is in the viewport
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Options for the observer
+            root: null, // viewport as the root
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        // Target all elements with the 'animate-on-scroll' class
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            animateOnScroll.observe(element);
+        });
+
+
+    </script>
+    
+</body>
+</html>

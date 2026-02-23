@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchens | GABLE Home Remodeling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</head>
+<style>
+        /* Ensure a perfect square for gallery images */
+    .aspect-square {
+        aspect-ratio: 1 / 1;
+        position: relative;
+    }
+
+    /* Rounded corners like the generated image */
+    .gallery-item div {
+        border-radius: 24px;
+    }
+
+    /* Custom easing for the scale effect */
+    .group:hover img {
+        transform: scale(1.1);
+        transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    /* Smooth fade for the text overlay */
+    .bg-black\/40 {
+        background-color: rgba(0, 0, 0, 0.5); /* Modern translucent black */
+        backdrop-filter: blur(4px); /* Optional: Adds a nice glass blur */
+    }
+
+    /* --- Animation Definitions (Subtle Motion Effects) --- */
+
+    /* Base class for elements that will be animated */
+
+    .animate-on-scroll{
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        will-change: opacity, transform,;
+    }
+
+    .animate-on-scroll.animated{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+</style>
+<body>
+    <div class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4 animate-on-scroll fade-in-up delay-4">
+        <div class="max-w-7xl mx-auto flex space-x-6 overflow-x-auto text-[10px] font-bold uppercase tracking-widest no-scrollbar animate-on-scroll fade-in-up">
+            <a href="portfolio.html" class="text-gray-400 hover:text-black transition">All Projects</a>
+            <a href="kitchens.html" class="text-yellow-600 border-b border-yellow-600 pb-1">Kitchens</a>
+            <a href="bathrooms.html" class="text-gray-400 hover:text-black transition">Bathrooms</a>
+            <a href="modern-exteriors.html" class="text-gray-400 hover:text-black transition">Modern Exteriors</a>
+            <a href="living-space.html" class="text-gray-400 hover:text-black transition">Living Spaces</a>
+        </div>
+    </div>
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-12">
+                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 animate-on-scroll fade-in-up">Portfolio</span>
+                <h2 class="text-4xl font-serif mt-2 animate-on-scroll fade-in-up delay-4">Kitchen Gallery</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="gallery-item group">
+                        <div class="aspect-square overflow-hidden bg-gray-200 relative">
+                            <img src="https://th.bing.com/th/id/R.13d31ba8bf25d7800edcdc5b97a7e5a9?rik=OpUrs7PbnYyCOQ&riu=http%3a%2f%2fcdn.home-designing.com%2fwp-content%2fuploads%2f2018%2f12%2fluxury-white-kitchen.jpg&ehk=vB2sdtj4TS1XCGQjgY0eOIjo7opPyVQYo%2fTPlB2ye5Y%3d&risl=&pid=ImgRaw&r=0" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Monolithic Island">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <h3 class="text-white text-xl font-bold uppercase tracking-tight animate-on-scroll fade-in-up delay-4">Monolithic Island Design</h3>
+                                <p class="text-gray-300 text-[10px] uppercase tracking-widest mt-2 animate-on-scroll fade-in-up delay-3">Integrated Stone Surfaces</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="gallery-item group">
+                        <div class="aspect-square overflow-hidden bg-gray-200 relative">
+                            <img src="https://www.bkciandre.com/wp-content/uploads/2025/01/Dark-wood-cabinets-and-marble-countertops-in-a-sleek-kitchen.webp" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Minimalist Cabinetry">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <h3 class="text-white text-xl font-bold uppercase tracking-tight animate-on-scroll fade-in-up delay-4">Seamless Cabinetry</h3>
+                                <p class="text-gray-300 text-[10px] uppercase tracking-widest mt-2 animate-on-scroll fade-in-up delay-3">Matte Charcoal Finish</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="gallery-item group">
+                        <div class="aspect-square overflow-hidden bg-gray-200 relative">
+                            <img src="https://th.bing.com/th/id/R.d20096d34c16899217ce5b3b38dddb53?rik=Y4CfMlg%2b0sS2Uw&riu=http%3a%2f%2flovehomedesign-images.s3-us-west-1.amazonaws.com%2fwp-content%2fuploads%2f2015%2f11%2f19170640%2fshutterstock_27743524.jpg&ehk=nbeFzGLfcfyZvd7zlp3brrtOabiT8M%2fAflKT9zJct2U%3d&risl=&pid=ImgRaw&r=0" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Industrial Textures">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <h3 class="text-white text-xl font-bold uppercase tracking-tight animate-on-scroll fade-in-up delay-4">Industrial Textures</h3>
+                                <p class="text-gray-300 text-[10px] uppercase tracking-widest mt-2 animate-on-scroll fade-in-up delay-3">Brushed Metal & Concrete</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="gallery-item group">
+                        <div class="aspect-square overflow-hidden bg-gray-200 relative">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.9bjiqGEskJy_-MQz3tF9mgHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <h3 class="text-white text-xl font-bold uppercase tracking-tight animate-on-scroll fade-in-up delay-4">Shadow Gap Detail</h3>
+                                <p class="text-gray-500 text-[10px] uppercase tracking-widest mt-2 animate-on-scroll fade-in-up delay-3">Architectural Lighting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="gallery-item group">
+                        <div class="aspect-square overflow-hidden bg-gray-200 relative">
+                            <img src="https://journeyhomes.us/wp-content/uploads/2023/02/luxury-home-builder-kitchen-design.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <h3 class="text-white text-xl font-bold uppercase tracking-tight animate-on-scroll fade-in-up delay-4">Obsidian Surfaces</h3>
+                                <p class="text-gray-300 text-[10px] uppercase tracking-widest mt-2 animate-on-scroll fade-in-up delay-3">Natural Stone Integration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="gallery-item group">
+                        <div class="aspect-square overflow-hidden bg-gray-200 relative">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.GV_iZI016TQ_v62bSeKc4wHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <h3 class="text-white text-xl font-bold uppercase tracking-tight animate-on-scroll fade-in-up delay-4">Nordic Culinary</h3>
+                                <p class="text-gray-300 text-[10px] uppercase tracking-widest mt-2 animate-on-scroll fade-in-up delay-3">Oak & Slate Finishes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="gallery-item group">
+                        <div class="aspect-square overflow-hidden bg-gray-200 relative">
+                            <img src="https://img.freepik.com/premium-photo/residential-interior-modern-kitchen-luxury-mansion_590200-4429.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Sculptural Lighting">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <h3 class="text-white text-xl font-bold uppercase tracking-tight animate-on-scroll fade-in-up delay-4">Sculptural Lighting</h3>
+                                <p class="text-gray-300 text-[10px] uppercase tracking-widest mt-2 animate-on-scroll fade-in-up delay-3">Ambient Linear Fixtures</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="gallery-item group">
+                        <div class="aspect-square overflow-hidden bg-gray-200 relative">
+                            <img src="https://i.etsystatic.com/43613657/r/il/681498/6395721385/il_1588xN.6395721385_4pk7.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Natural Oak Joinery">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <h3 class="text-white text-xl font-bold uppercase tracking-tight animate-on-scroll fade-in-up delay-4">Oak Joinery</h3>
+                                <p class="text-gray-300 text-[10px] uppercase tracking-widest mt-2 animate-on-scroll fade-in-up delay-3">Precision Millwork</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="gallery-item group">
+                        <div class="aspect-square overflow-hidden bg-gray-200 relative">
+                            <img src="https://www.homenish.com/wp-content/uploads/2019/02/kitchen-island-ideas/fully-functional-kitchen-island-with-sink-drainage-and-ample-counter-space.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Minimalist Pantry">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                                <h3 class="text-white text-xl font-bold uppercase tracking-tight animate-on-scroll fade-in-up delay-4">The Modern Pantry</h3>
+                                <p class="text-gray-300 text-[10px] uppercase tracking-widest mt-2 animate-on-scroll fade-in-up delay-3">Integrated Storage Systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // --- 2. Scroll-Based Animations (Intersection Observer) ---
+
+        // Setup the observer
+        const animateOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // When the element is in the viewport
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Options for the observer
+            root: null, // viewport as the root
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        // Target all elements with the 'animate-on-scroll' class
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            animateOnScroll.observe(element);
+        });
+
+
+    </script>
+    
+</body>
+</html>

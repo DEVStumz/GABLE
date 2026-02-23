@@ -15,6 +15,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: serif;
         }
         /* Nav */
         #navbar{
@@ -104,9 +105,30 @@
             border-color: rgba(255, 255, 255, 0.1) !important;
         }
 
+        /* --- Animation Definitions (Subtle Motion Effects) --- */
+
+        /* Base class for elements that will be animated */
+
+        .animate-on-scroll{
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            will-change: opacity, transform,;
+        }
+
+        .animate-on-scroll.animated{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
         @media(max-width: 720px){
             #swiper{
-                height: 82vh;
+                height: 85vh;
+            }
+            #text{
+                line-height: 15%;
+                word-spacing: 5%;
             }
             #form{
                 margin-bottom: 5%;
@@ -141,7 +163,7 @@
             </button>
 
             <button class="hidden md:block bg-blue-600 px-5 py-2 text-xs font-bold uppercase tracking-widest hover:bg-blue-700 transition" style="border-radius: 16px;">
-                Search +
+                Search 
             </button>
         </div>
 
@@ -172,12 +194,12 @@
 
         <div class="hero-overlay"></div>
 
-        <div class="relative z-10">
-            <h1 class="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+        <div id="text" class="relative z-10">
+            <h1 class="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8 animate-on-scroll fade-in-up delay-2">
                 Your Comfort Is Our <br> Only Priority
             </h1>
-            <a href="#services" class="bg-yellow-500 hover:bg-yellow-600 text-black font-black py-3 px-6 text-sm tracking-widest transition" style="border-radius: 12px;">
-                SERVICES +
+            <a href="#services" class="bg-yellow-500 hover:bg-yellow-600 text-black font-black py-3 px-6 text-sm tracking-widest transition animate-on-scroll fade-in-up delay-3" style="border-radius: 12px;">
+                SERVICES 
             </a>
         </div>
 
@@ -185,52 +207,58 @@
 
     <section id="services" class="py-24 bg-gray-200 px-6 md:px-16 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div>
-            <span class="text-blue-600 font-bold text-xs tracking-[0.3em] uppercase block mb-4">Home Improvements</span>
-            <h2 class="text-4xl font-black uppercase leading-tight mb-6">Top-Notch House <br> Remodeling Services</h2>
-            <p class="text-gray-500 leading-relaxed mb-8 max-w-md">Professional architectural solutions and high-end remodeling for modern homeowners looking for quality and reliability.</p>
-            <button class="bg-blue-600 text-white px-6 py-3 font-bold text-xs tracking-widest hover:bg-blue-800 transition" style="border-radius: 12px;">ANALYZE +</button>
+            <span class="text-blue-600 font-bold text-xs tracking-[0.3em] uppercase block mb-4 animate-on-scroll fade-in-up">Home Improvements</span>
+            <h2 class="text-4xl font-black uppercase leading-tight mb-6 animate-on-scroll fade-in-up delay-3">Top-Notch House <br> Remodeling Services</h2>
+            <p class="text-gray-500 leading-relaxed mb-8 max-w-md animate-on-scroll fade-in-up delay-4">Professional architectural solutions and high-end remodeling for modern homeowners looking for quality and reliability.</p>
+            <button class="bg-blue-600 text-white px-6 py-3 font-bold text-xs tracking-widest hover:bg-blue-800 transition animate-on-scroll fade-in-up delay-4" style="border-radius: 12px;">ANALYZE +</button>
         </div>
         <div class="grid grid-cols-2 gap-6">
-            <div class="bg-white p-10 shadow-2xl border-t-4 border-blue-600 text-center group hover:-translate-y-2 transition-transform">
+            <div class="bg-white p-10 shadow-2xl border-t-4 border-blue-600 text-center group hover:-translate-y-2 transition-transform animate-on-scroll fade-in-up delay-2">
                 <i class="fa-solid fa-compass-drafting text-3xl text-blue-600 mb-4"></i>
                 <h3 class="font-bold uppercase text-sm tracking-widest">Planning</h3>
             </div>
-            <div class="bg-gray-50 p-10 text-center border-t-4 border-transparent hover:border-blue-600 transition shadow-sm ">
+            <div class="bg-gray-50 p-10 text-center border-t-4 border-transparent hover:border-blue-600 transition shadow-sm animate-on-scroll fade-in-up delay-2">
                 <i class="fa-solid fa-hammer text-3xl text-blue-600 mb-4"></i>
                 <h3 class="font-bold uppercase text-sm tracking-widest">Repairs</h3>
             </div>
-            <div class="bg-gray-50 p-10 text-center border-t-4 border-transparent hover:border-blue-600 transition shadow-sm">
+            <div class="bg-gray-50 p-10 text-center border-t-4 border-transparent hover:border-blue-600 transition shadow-sm animate-on-scroll fade-in-up delay-2">
                 <i class="fa-solid fa-couch text-3xl text-blue-600 mb-4"></i>
                 <h3 class="font-bold uppercase text-sm tracking-widest">Interior</h3>
             </div>
-            <div class="bg-white p-10 shadow-2xl border-t-4 border-blue-600 text-center group hover:-translate-y-2 transition-transform">
+            <div class="bg-white p-10 shadow-2xl border-t-4 border-blue-600 text-center group hover:-translate-y-2 transition-transform animate-on-scroll fade-in-up delay-2">
                 <i class="fa-solid fa-droplet text-3xl text-blue-600 mb-4"></i>
                 <h3 class="font-bold uppercase text-sm tracking-widest">Plumbing</h3>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="grid g-4 grid-cols-2 md:grid-cols-4 h-64 md:h-80 overflow-hidden">
+    <section id="gallery" class="grid g-4 grid-cols-2 md:grid-cols-4 h-64 md:h-80 overflow-hidden animate-on-scroll fade-in-up delay-4">
         <div class="relative group overflow-hidden border-r border-white">
-           <a href="#bedroom">
+           <a href="portfolio.html">
               <img src="img/16.jpeg" alt="Bedroom" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
            </a> 
         </div>
         <div class="relative group overflow-hidden border-r border-white">
-            <img src="img/7.jpeg" alt="Dining Area" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            <a href="portfolio.html">
+               <img src="img/7.jpeg" alt="Dining Area" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            </a>
         </div>
         <div class="relative group overflow-hidden border-r border-white">
-            <img src="img/15.jpeg" alt="Minimalist Room" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            <a href="portfolio.html">
+               <img src="img/15.jpeg" alt="Minimalist Room" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            </a>
         </div>
         <div class="relative group overflow-hidden">
-            <img src="img/4.jpeg" alt="Modern Bathroom" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            <a href="bathrooms.html">
+                <img src="img/4.jpeg" alt="Modern Bathroom" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            </a>
         </div>
     </section>
 
 
     <section class="py-24 bg-gray-50 text-center px-6">
-        <span class="text-gray-400 font-bold text-xs tracking-widest uppercase block mb-4">What Clients Say</span>
-        <h2 class="text-3xl font-black uppercase mb-12">Customer Reviews and Testimonials fOR <br> home improvement</h2>
+        <span class="text-gray-400 font-bold text-xs tracking-widest uppercase block mb-4 animate-on-scroll fade-in-up">What Clients Say</span>
+        <h2 class="text-3xl font-black uppercase mb-12 animate-on-scroll fade-in-up delay-4">Customer Reviews and Testimonials fOR <br> home improvement</h2>
         <div class="max-w-3xl mx-auto italic text-gray-600 text-lg leading-loose">
 
             <div class="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-4 overflow-hidden">
@@ -239,8 +267,8 @@
             <p>"The attention to detail and professional communication from the Gable team was beyond our expectations. Our home feels brand new and perfectly functional."</p>
             <div class="mt-8">
                 
-                <h4 class="font-black uppercase text-sm tracking-widest text-black">Jane Doe</h4>
-                <p class="text-xs text-blue-600 font-bold uppercase mt-1">Home Owner</p>
+                <h4 class="font-black uppercase text-sm tracking-widest text-black animate-on-scroll fade-in-up delay-4">Jane Doe</h4>
+                <p class="text-xs text-blue-600 font-bold uppercase mt-1 animate-on-scroll fade-in-up delay-3">Home Owner</p>
             </div>
         </div>
     </section>
@@ -251,10 +279,10 @@
         </div>
 
         <div class="w-full md:w-7/12">
-            <span class="text-blue-600 font-bold text-xs tracking-[0.4em] uppercase block mb-4">We Improve Your Home</span>
-            <h2 class="text-4xl md:text-5xl font-black uppercase leading-tight mb-8">Inspiring Ideas and Expert <br> Advice for Your House</h2>
+            <span class="text-blue-600 font-bold text-xs tracking-[0.4em] uppercase block mb-4 animate-on-scroll fade-in-up">We Improve Your Home</span>
+            <h2 class="text-4xl md:text-5xl font-black uppercase leading-tight mb-8 animate-on-scroll fade-in-up delay-4">Inspiring Ideas and Expert <br> Advice for Your House</h2>
             
-            <p class="text-gray-500 text-lg leading-relaxed mb-10 max-w-xl">
+            <p class="text-gray-500 text-lg leading-relaxed mb-10 max-w-xl animate-on-scroll fade-in-up delay-3">
                 Modernize your living space with our expert craftsmanship and architectural design services. We provide professional advice on sustainable materials and space optimization.
             </p>
 
@@ -268,20 +296,20 @@
         <div class="container">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-10 border-t border-gray-100" style="justify-content: center; padding-bottom: 3%;">
                 <div class="text-center md:text-left">
-                    <h3 class="text-5xl font-black text-gray-900 mb-2">93+</h3>
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Projects</p>
+                    <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll fade-in-up delay-4">93+</h3>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest animate-on-scroll fade-in-up">Projects</p>
                 </div>
                 <div class="text-center md:text-left">
-                    <h3 class="text-5xl font-black text-gray-900 mb-2">65+</h3>
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">People</p>
+                    <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll fade-in-up delay-3">65+</h3>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest animate-on-scroll fade-in-up">People</p>
                 </div>
                 <div class="text-center md:text-left">
-                    <h3 class="text-5xl font-black text-gray-900 mb-2">10+</h3>
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Years</p>
+                    <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll fade-in-up delay-4">10+</h3>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest animate-on-scroll fade-in-up">Years</p>
                 </div>
                 <div class="text-center md:text-left">
-                    <h3 class="text-5xl font-black text-gray-900 mb-2">15+</h3>
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Offices</p>
+                    <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll fade-in-up delay-3">15+</h3>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest animate-on-scroll fade-in-up">Offices</p>
                 </div>
             </div>
         </div>
@@ -302,10 +330,10 @@
         </div>
 
         <div class="relative z-10 px-6 text-center">
-            <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">
+            <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 animate-on-scroll fade-in-up">
                 Our Mission
             </h2>
-            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-100 font-light leading-relaxed">
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-100 font-light leading-relaxed animate-on-scroll fade-in-up delay-1">
                 Crafting sustainable, modern living spaces that bridge the gap 
                 between innovative architecture and the comfort of home.
             </p>
@@ -315,17 +343,19 @@
    <section class="py-5 bg-white">
         <div class="container py-5">
             <div class="text-center mb-5">
-                <span class="sub-label">Our Blog</span>
-                <h2 class="section-title mt-2">Learn More About Our Company <br> By Reading The News</h2>
+                <span class="sub-label animate-on-scroll fade-in-up">Our Blog</span>
+                <h2 class="section-title mt-2 animate-on-scroll fade-in-up delay-1">Learn More About Our Company <br> By Reading The News</h2>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-4 animate-on-scroll fade-in-up delay-2">
                 <div class="col-md-4">
                     <div class="blog-card card h-100">
                         <img src="img/2.jpeg" alt="Construction">
                         <div class="card-body px-0">
-                            <p class="blog-date mb-1">MARCH 12, 2024</p>
-                            <h4 class="blog-title">Safety Starts With Quality And Professional Construction</h4>
+                            <a href="blog.html">
+                                <p class="blog-date mb-1">MARCH 12, 2024</p>
+                                <h4 class="blog-title">Safety Starts With Quality And Professional Construction</h4>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -333,8 +363,10 @@
                     <div class="blog-card card h-100">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Interior">
                         <div class="card-body px-0">
-                            <p class="blog-date mb-1">FEBRUARY 28, 2024</p>
-                            <h4 class="blog-title">How A Room Addition Can Maximize Your Property's Value</h4>
+                            <a href="blog.html">
+                                <p class="blog-date mb-1">FEBRUARY 28, 2024</p>
+                                <h4 class="blog-title">How A Room Addition Can Maximize Your Property's Value</h4>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -342,8 +374,10 @@
                     <div class="blog-card card h-100">
                         <img src="img/3.jpeg" alt="Technical">
                         <div class="card-body px-0">
-                            <p class="blog-date mb-1">JANUARY 15, 2024</p>
-                            <h4 class="blog-title">Technical Inspection Prior to Every Remodel Job Is Crucial</h4>
+                            <a href="blog.html">
+                                <p class="blog-date mb-1">JANUARY 15, 2024</p>
+                                <h4 class="blog-title">Technical Inspection Prior to Every Remodel Job Is Crucial</h4>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -359,8 +393,8 @@
                 </div>
 
                 <div id="form" class="col-md-4" style="margin-top: 10%;" >
-                    <h6 class="text-uppercase text-4xl text-black fw-bold small mb-4 opacity-50 border-bottom pb-2">Have Questions? <br> Get in Touch!</h6>
-                    <form class="row g-3">
+                    <h6 class="text-uppercase text-4xl text-black fw-bold small mb-4 opacity-50 border-bottom pb-2 animate-on-scroll fade-in-up">Have Questions? <br> Get in Touch!</h6>
+                    <form class="row g-3 animate-on-scroll fade-in-up delay-2">
                         <div class="col-md-6"><input type="text" class="form-control form-control-custom" placeholder="NAME"></div>
                         <div class="col-md-6"><input type="email" class="form-control form-control-custom" placeholder="EMAIL"></div>
                         <div class="col-12"><textarea class="form-control form-control-custom" rows="2" placeholder="MESSAGE"></textarea></div>
@@ -373,7 +407,7 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-white pt-5 pb-3">
+    <footer class="bg-dark text-white pt-5 pb-3 animate-on-scroll fade-in-up">
     <div class="container py-4">
         <div class="row g-4">
             <div class="col-md-3">
@@ -431,28 +465,24 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
 
-    const video = document.getElementById('scrollVideo');
+        const video = document.getElementById('scrollVideo');
 
-    const options = {
-        root: null, // use the viewport
-        threshold: 0.5 // 0.5 means 50% of the video must be visible to trigger
-    };
+        const options = {
+            root: null, // use the viewport
+            threshold: 0.5 // 0.5 means 50% of the video must be visible to trigger
+        };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
-    }, options);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        }, options);
 
-    observer.observe(video);
-
-
-
-
+        observer.observe(video);
 
 
 
@@ -460,20 +490,20 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = menuBtn.querySelector('i');
 
-        menuBtn.addEventListener('click', () => {
-        // Toggle the 'hidden' class
-        mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('flex');
+            menuBtn.addEventListener('click', () => {
+            // Toggle the 'hidden' class
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
 
-        // Optional: Switch icon from Bars to X
-        if (mobileMenu.classList.contains('hidden')) {
-            menuIcon.classList.remove('fa-times');
-            menuIcon.classList.add('fa-bars');
-        } else {
-            menuIcon.classList.remove('fa-bars');
-            menuIcon.classList.add('fa-times');
-        }
-    });
+            // Optional: Switch icon from Bars to X
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+        });
 
 
         const swiper = new Swiper(".gallery-slider", {
@@ -490,6 +520,33 @@
                 clickable: true
             }
         });
+
+
+        // --- 2. Scroll-Based Animations (Intersection Observer) ---
+
+        // Setup the observer
+        const animateOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // When the element is in the viewport
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Options for the observer
+            root: null, // viewport as the root
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        // Target all elements with the 'animate-on-scroll' class
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            animateOnScroll.observe(element);
+        });
+
+
     </script>
     
 </body>

@@ -28,6 +28,23 @@
             width: 30%;
             margin-top: -8%;
         }
+
+        /* --- Animation Definitions (Subtle Motion Effects) --- */
+
+    /* Base class for elements that will be animated */
+
+    .animate-on-scroll{
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+        will-change: opacity, transform,;
+    }
+
+    .animate-on-scroll.animated{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
      /* Dark Footer Styling */
     
     .bg-dark {
@@ -89,131 +106,137 @@
     <section id="hero" class="relative h-[110vh] w-full flex items-end pb-20 px-6 md:px-16 bg-black">
         
         <div id="text" class="relative z-10 max-w-4xl">
-            <p class="text-[10px] font-black uppercase tracking-[0.5em] text-yellow-500 mb-4">Featured Article</p>
-            <h1 class="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-6">
+            <p class="text-[10px] font-black uppercase tracking-[0.5em] text-yellow-500 mb-4 animate-on-scroll fade-in-up">Featured Article</p>
+            <h1 class="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-6 animate-on-scroll fade-in-up delay-4">
                 The Future of <br> Minimalist Design in 2026
             </h1>
-            <p class="text-gray-300 text-lg md:text-xl font-light max-w-2xl mb-8">
+            <p class="text-gray-300 text-lg md:text-xl font-light max-w-2xl mb-8 animate-on-scroll fade-in-up delay-3">
                 How technology and raw materials are merging to create the next generation of "Warm Minimalism."
             </p>
-            <a href="#" class="inline-block bg-white text-black px-8 py-4 text-[10px] font-black uppercase tracking-widest hover:bg-yellow-500 transition">Read Story</a>
+            <a href="#read" class="inline-block bg-white text-black px-8 py-4 text-[10px] font-black uppercase tracking-widest hover:bg-yellow-500 transition animate-on-scroll fade-in-up delay-4">Read Story</a>
         </div>
     </section>
 
-        <div class="bg-gray-50 border-b border-gray-100 px-6 py-4 overflow-x-auto">
+        <div class="bg-gray-50 border-b border-gray-100 px-6 py-4 overflow-x-auto animate-on-scroll fade-in-up delay-4">
             <div class="max-w-7xl mx-auto flex space-x-10 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">
-                <a href="#" class="text-black border-b border-black pb-1">All Stories</a>
-                <a href="#" class="text-gray-400 hover:text-black transition">Design Trends</a>
-                <a href="#" class="text-gray-400 hover:text-black transition">Material Science</a>
-                <a href="#" class="text-gray-400 hover:text-black transition">Home Technology</a>
-                <a href="#" class="text-gray-400 hover:text-black transition">Interviews</a>
+                <a href="#" class="text-black border-b border-black pb-1 animate-on-scroll fade-in-up">All Stories</a>
+                <a href="design-trends.html" class="text-gray-400 hover:text-black transition animate-on-scroll fade-in-up">Design Trends</a>
+                <a href="material-science.html" class="text-gray-400 hover:text-black transition animate-on-scroll fade-in-up">Material Science</a>
+                <a href="home-technology.html" class="text-gray-400 hover:text-black transition animate-on-scroll fade-in-up">Home Technology</a>
+                <a href="interviews.html" class="text-gray-400 hover:text-black transition animate-on-scroll fade-in-up">Interviews</a>
             </div>
         </div>
 
     <section class="py-24 px-6 md:px-16 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-10 animate-on-scroll fade-in-up">
             
-            <article class="group">
+            <article class="group animate-on-scroll fade-in-up delay-4">
                 <div class="aspect-[4/5] overflow-hidden bg-gray-100 mb-6">
                     <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
-                <p class="text-[10px] font-bold text-yellow-600 uppercase tracking-widest mb-2">Design Trends — Feb 2026</p>
-                <h3 class="text-2xl font-black uppercase tracking-tight leading-tight mb-4 group-hover:text-yellow-600 transition">Sourcing Sustainable Marble for Modern Kitchens</h3>
-                <p class="text-gray-500 text-sm leading-relaxed line-clamp-3">We travel to Italy to discover the quarries leading the charge in zero-waste extraction methods...</p>
+                <a href="design-trends.html">
+                    <p class="text-[10px] font-bold text-yellow-600 uppercase tracking-widest mb-2 animate-on-scroll fade-in-up delay-3">Design Trends — Feb 2026</p>
+                    <h3 class="text-2xl font-black uppercase tracking-tight leading-tight mb-4 group-hover:text-yellow-600 transition animate-on-scroll fade-in-up">Sourcing Sustainable Marble for Modern Kitchens</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed line-clamp-3 animate-on-scroll fade-in-up delay-4">We travel to Italy to discover the quarries leading the charge in zero-waste extraction methods...</p>
+                </a>
             </article>
 
-            <article class="group">
+            <article class="group animate-on-scroll fade-in-up delay-4">
                 <div class="aspect-[4/5] overflow-hidden bg-gray-100 mb-6">
                     <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
-                <p class="text-[10px] font-bold text-yellow-600 uppercase tracking-widest mb-2">Technology — Jan 2026</p>
-                <h3 class="text-2xl font-black uppercase tracking-tight leading-tight mb-4 group-hover:text-yellow-600 transition">Smart Lighting: Beyond the App</h3>
-                <p class="text-gray-500 text-sm leading-relaxed line-clamp-3">Why circadian rhythm lighting is becoming the most requested feature in luxury remodeling...</p>
+                <a href="home-technology.html">
+                    <p class="text-[10px] font-bold text-yellow-600 uppercase tracking-widest mb-2 animate-on-scroll fade-in-up delay-3">Technology — Jan 2026</p>
+                    <h3 class="text-2xl font-black uppercase tracking-tight leading-tight mb-4 group-hover:text-yellow-600 transition animate-on-scroll fade-in-up">Smart Lighting: Beyond the App</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed line-clamp-3 animate-on-scroll fade-in-up delay-4">Why circadian rhythm lighting is becoming the most requested feature in luxury remodeling...</p>
+                </a>
             </article>
 
-            <article class="group">
+            <article class="group animate-on-scroll fade-in-up delay-4">
                 <div class="aspect-[4/5] overflow-hidden bg-gray-100 mb-6">
                     <img src="https://tse3.mm.bing.net/th/id/OIP.2hg8cmoYjuSB9rPmFNuF-QHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                 </div>
-                <p class="text-[10px] font-bold text-yellow-600 uppercase tracking-widest mb-2">Interviews — Jan 2026</p>
-                <h3 class="text-2xl font-black uppercase tracking-tight leading-tight mb-4 group-hover:text-yellow-600 transition">Inside the Studio: Elena Vance</h3>
-                <p class="text-gray-500 text-sm leading-relaxed line-clamp-3">Our Lead Architect shares her philosophy on "Invisible Luxury" and the power of negative space...</p>
+                <a href="interviews.html">
+                    <p class="text-[10px] font-bold text-yellow-600 uppercase tracking-widest mb-2 animate-on-scroll fade-in-up delay-3">Interviews — Jan 2026</p>
+                    <h3 class="text-2xl font-black uppercase tracking-tight leading-tight mb-4 group-hover:text-yellow-600 transition animate-on-scroll fade-in-up">Inside the Studio: Elena Vance</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed line-clamp-3 animate-on-scroll fade-in-up delay-4">Our Lead Architect shares her philosophy on "Invisible Luxury" and the power of negative space...</p>
+                </a>
             </article>
 
             
-            <div class="group cursor-pointer">
+            <div id="read" class="group cursor-pointer animate-on-scroll fade-in-up">
                 <div class="aspect-[16/10] bg-gray-50 overflow-hidden relative mb-6">
                     <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800" alt="Tactile Minimalism" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all"></div>
                 </div>
 
                 <div class="space-y-3">
-                    <div class="flex items-center space-x-4 text-[9px] font-black uppercase tracking-[0.3em] text-yellow-600">
+                    <div class="flex items-center space-x-4 text-[9px] font-black uppercase tracking-[0.3em] text-yellow-600 animate-on-scroll fade-in-up delay-3">
                         <span>Material Study</span>
                         <span class="w-8 h-[1px] bg-yellow-600/30"></span>
                         <span class="text-gray-400">Feb 2026</span>
                     </div>
-                    <h3 class="text-2xl font-black uppercase tracking-tighter leading-tight group-hover:text-yellow-600 transition">The Art of Tactile <br>Minimalism</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed max-w-sm">
+                    <h3 class="text-2xl font-black uppercase tracking-tighter leading-tight group-hover:text-yellow-600 transition animate-on-scroll fade-in-up">The Art of Tactile <br>Minimalism</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed max-w-sm animate-on-scroll fade-in-up delay-4">
                         Exploring why the physical touch of raw stone and hand-planed wood is becoming the ultimate luxury in a digital world.
                     </p>
                     <div class="pt-2">
-                        <span class="text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1 group-hover:pr-4 transition-all">Read Journal</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1 group-hover:pr-4 transition-all animate-on-scroll fade-in-up delay-3">Read Journal</span>
                     </div>
                 </div>
             </div>
 
-            <div class="group cursor-pointer">
+            <div class="group cursor-pointer animate-on-scroll fade-in-up">
                 <div class="aspect-[16/10] bg-gray-50 overflow-hidden relative mb-6">
                     <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" alt="The Canyon House" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all"></div>
                 </div>
                 <div class="space-y-3">
-                    <div class="flex items-center space-x-4 text-[9px] font-black uppercase tracking-[0.3em] text-yellow-600">
+                    <div class="flex items-center space-x-4 text-[9px] font-black uppercase tracking-[0.3em] text-yellow-600 animate-on-scroll fade-in-up delay-4">
                         <span>Interiors</span>
                         <span class="w-8 h-[1px] bg-yellow-600/30"></span>
                         <span class="text-gray-400">Jan 2026</span>
                     </div>
-                    <h3 class="text-2xl font-black uppercase tracking-tighter leading-tight group-hover:text-yellow-600 transition">Restoring the <br>Canyon House</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed max-w-sm">
+                    <h3 class="text-2xl font-black uppercase tracking-tighter leading-tight group-hover:text-yellow-600 transition animate-on-scroll fade-in-up">Restoring the <br>Canyon House</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed max-w-sm animate-on-scroll fade-in-up delay-4">
                         A deep dive into our latest restoration project, balancing 1960s modernism with 21st-century sustainability.
                     </p>
                     <div class="pt-2">
-                        <span class="text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1 group-hover:pr-4 transition-all">View Project</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1 group-hover:pr-4 transition-all animate-on-scroll fade-in-up delay-3">View Project</span>
                     </div>
                 </div>
             </div>
 
-            <div class="group cursor-pointer">
+            <div class="group cursor-pointer animate-on-scroll fade-in-up">
                 <div class="aspect-[16/10] bg-gray-50 overflow-hidden relative mb-6">
                     <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Light as Structure" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all"></div>
                 </div>
                 <div class="space-y-3">
-                    <div class="flex items-center space-x-4 text-[9px] font-black uppercase tracking-[0.3em] text-yellow-600">
+                    <div class="flex items-center space-x-4 text-[9px] font-black uppercase tracking-[0.3em] text-yellow-600 animate-on-scroll fade-in-up delay-4">
                         <span>Philosophy</span>
                         <span class="w-8 h-[1px] bg-yellow-600/30"></span>
                         <span class="text-gray-400">Dec 2025</span>
                     </div>
-                    <h3 class="text-2xl font-black uppercase tracking-tighter leading-tight group-hover:text-yellow-600 transition">Light as an <br>Architectural Tool</h3>
-                    <p class="text-gray-500 text-xs leading-relaxed max-w-sm">
+                    <h3 class="text-2xl font-black uppercase tracking-tighter leading-tight group-hover:text-yellow-600 transition animate-on-scroll fade-in-up">Light as an <br>Architectural Tool</h3>
+                    <p class="text-gray-500 text-xs leading-relaxed max-w-sm animate-on-scroll fade-in-up delay-4">
                         How Gable Studio uses shadow and natural light to define spaces without the need for physical walls.
                     </p>
                     <div class="pt-2">
-                        <span class="text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1 group-hover:pr-4 transition-all">Read Essay</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest border-b border-black pb-1 group-hover:pr-4 transition-all animate-on-scroll fade-in-up delay-3">Read Essay</span>
                     </div>
                 </div>
             </div>
 
             <div class="md:col-span-3 bg-black text-white p-12 flex flex-col md:flex-row items-center justify-between">
                 <div class="max-w-xl">
-                    <h2 class="text-3xl font-black uppercase tracking-tighter mb-4">Never miss an update.</h2>
-                    <p class="text-gray-400 text-sm uppercase tracking-widest">Join 5,000+ architects and designers receiving our monthly digest.</p>
+                    <h2 class="text-3xl font-black uppercase tracking-tighter mb-4 animate-on-scroll fade-in-up">Never miss an update.</h2>
+                    <p class="text-gray-400 text-sm uppercase tracking-widest animate-on-scroll fade-in-up delay-4">Join 5,000+ architects and designers receiving our monthly digest.</p>
                 </div>
-                <div class="mt-8 md:mt-0 w-full md:w-auto">
+                <div class="mt-8 md:mt-0 w-full md:w-auto animate-on-scroll fade-in-up delay-3">
                     <form class="flex border-b border-gray-700">
                         <input type="email" placeholder="EMAIL ADDRESS" class="bg-transparent border-none py-4 px-2 text-xs focus:outline-none w-full md:w-64">
-                        <button class="text-yellow-500 font-black text-[10px] uppercase tracking-widest px-4">Subscribe</button>
+                        <button class="text-yellow-500 font-black text-[10px] uppercase tracking-widest px-4 animate-on-scroll fade-in-up">Subscribe</button>
                     </form>
                 </div>
             </div>
@@ -224,12 +247,12 @@
     <section class="py-24 px-6 md:px-16 bg-white">
         <div class="max-w-4xl mx-auto">
             <div class="mb-16 text-center">
-                <p class="text-xs font-bold uppercase tracking-widest text-yellow-600 mb-2">Common Inquiries</p>
-                <h2 class="text-4xl font-black uppercase tracking-tighter">Frequently Asked Questions</h2>
+                <p class="text-xs font-bold uppercase tracking-widest text-yellow-600 mb-2 animate-on-scroll fade-in-up">Common Inquiries</p>
+                <h2 class="text-4xl font-black uppercase tracking-tighter animate-on-scroll fade-in-up delay-4">Frequently Asked Questions</h2>
             </div>
 
             <div class="space-y-4">
-                <div class="border-b border-gray-100 pb-6">
+                <div class="border-b border-gray-100 pb-6 animate-on-scroll fade-in-up delay-3">
                     <button onclick="toggleFAQ(1)" class="flex justify-between items-center w-full text-left group">
                         <span class="text-lg font-bold uppercase tracking-tight group-hover:text-yellow-600 transition">How long does a typical remodeling project take?</span>
                         <span id="icon-1" class="text-2xl font-light transition-transform duration-300">+</span>
@@ -239,7 +262,7 @@
                     </div>
                 </div>
 
-                <div class="border-b border-gray-100 pb-6 pt-6">
+                <div class="border-b border-gray-100 pb-6 pt-6 animate-on-scroll fade-in-up delay-3">
                     <button onclick="toggleFAQ(2)" class="flex justify-between items-center w-full text-left group">
                         <span class="text-lg font-bold uppercase tracking-tight group-hover:text-yellow-600 transition">Do I need to move out during the renovation?</span>
                         <span id="icon-2" class="text-2xl font-light transition-transform duration-300">+</span>
@@ -249,7 +272,7 @@
                     </div>
                 </div>
 
-                <div class="border-b border-gray-100 pb-6 pt-6">
+                <div class="border-b border-gray-100 pb-6 pt-6 animate-on-scroll fade-in-up delay-3">
                     <button onclick="toggleFAQ(3)" class="flex justify-between items-center w-full text-left group">
                         <span class="text-lg font-bold uppercase tracking-tight group-hover:text-yellow-600 transition">Is GABLE licensed and insured?</span>
                         <span id="icon-3" class="text-2xl font-light transition-transform duration-300">+</span>
@@ -259,7 +282,7 @@
                     </div>
                 </div>
 
-                <div class="border-b border-gray-100 pb-6 pt-6">
+                <div class="border-b border-gray-100 pb-6 pt-6 animate-on-scroll fade-in-up delay-3">
                     <button onclick="toggleFAQ(4)" class="flex justify-between items-center w-full text-left group">
                         <span class="text-lg font-bold uppercase tracking-tight group-hover:text-yellow-600 transition">Can I provide my own materials?</span>
                         <span id="icon-4" class="text-2xl font-light transition-transform duration-300">+</span>
@@ -272,7 +295,7 @@
         </div>
     </section>
 
-   <footer class="bg-dark text-white pt-5 pb-3">
+   <footer class="bg-dark text-white pt-5 pb-3 animate-on-scroll fade-in-up">
         <div class="container py-4">
             <div class="row g-4">
                 <div class="col-md-3">
@@ -337,6 +360,32 @@
                 menu.classList.add('hidden');
             }
         }
+
+        // --- 2. Scroll-Based Animations (Intersection Observer) ---
+
+        // Setup the observer
+        const animateOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // When the element is in the viewport
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    // Stop observing once animated
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Options for the observer
+            root: null, // viewport as the root
+            rootMargin: '0px',
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        // Target all elements with the 'animate-on-scroll' class
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            animateOnScroll.observe(element);
+        });
+
+
  
               /*FAQ*/
          function toggleFAQ(id) {
