@@ -137,47 +137,51 @@
     </style>
 </head>
 <body class="">
-    
-    <header id="navbar" class="absolute w-full z-[60] flex justify-between items-center px-6 py-6 md:px-16 text-white bg-black/20 backdrop-blur-sm">
-        <!--<div class="text-2xl font-black tracking-tighter italic">GABLE</div>-->
-        <div class="logo">
-            <img src="img/Gable logo.png" alt="logo-img">
-        </div>
 
-        <nav class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest">
-            <a href="index.html" class="text-yellow-500">Home</a>
-            <a href="about.html" class="hover:text-yellow-500 transition">About</a>
-            <a href="portfolio.html" class="hover:text-yellow-500 transition">Portfolio</a>
-            <a href="blog.html" class="hover:text-yellow-500 transition">Blog</a>
-            <a href="#" class="hover:text-yellow-500 transition">Shop</a>
-        </nav>
-
-        <div class="flex items-center space-x-6">
-            <div class="hidden sm:block text-right">
-                <p class="text-[10px] uppercase text-gray-300">Call Us Today</p>
-                <p class="text-sm font-bold">+1 800 555 01 23</p>
+    <header id="navbar" class="w-full sticky-top shadow-sm z-[60] text-white bg-black/40 backdrop-blur-md border-b border-white/10">
+        <div class="flex justify-between items-center px-6 py-6 md:px-16">
+            <div class="logo" style="margin-top: -2%;">
+                <img src="img/Gable logo.png" alt="logo-img">
             </div>
             
-            <button id="menu-btn" class="lg:hidden text-2xl focus:outline-none" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <nav class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="index.html" class="text-yellow-500">Home</a>
+                <a href="about.html" class="hover:text-yellow-500 transition">About</a>
+                <a href="portfolio.html" class="hover:text-yellow-500 transition">Portfolio</a>
+                <a href="blog.html" class="hover:text-yellow-500 transition">Blog</a>
+                <a href="shop.html" class="hover:text-yellow-500 transition">Shop</a>
+            </nav>
 
-            <button class="hidden md:block bg-blue-600 px-5 py-2 text-xs font-bold uppercase tracking-widest hover:bg-blue-700 transition" style="border-radius: 16px;">
-                Search 
+            <div class="flex items-center space-x-6">
+                <div class="hidden sm:block text-right">
+                    <p class="text-[10px] uppercase text-gray-300">Call Us Today</p>
+                    <p class="text-sm font-bold">+1 800 555 01 23</p>
+                </div>
+                
+                <a href="" class="hidden md:block bg-yellow-500 px-5 py-2 text-xs font-bold uppercase tracking-widest hover:bg-yellow-700 transition" style="border-radius: 14px; cursor: pointer;">
+                    Explore 
+                </a>
+            </div>
+
+            <button onclick="toggleDropdown()" class="lg:hidden text-white focus:outline-none">
+                <svg id="menuIcon" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"/>
+                </svg>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md flex-col items-center py-8 space-y-6 lg:hidden border-t border-white/10">
-            <a href="index.html" class="text-yellow-500 text-sm font-bold uppercase">Home</a>
-            <a href="about.html" class="hover:text-yellow-500 text-sm font-bold uppercase transition">About</a>
-            <a href="portfolio.html" class="hover:text-yellow-500 text-sm font-bold uppercase transition">Portfolio</a>
-            <a href="blog.html" class="hover:text-yellow-500 text-sm font-bold uppercase transition">Blog</a>
-            <a href="shop.html" class="hover:text-yellow-500 text-sm font-bold uppercase transition">Shop</a>
-            <button class="bg-blue-600 px-5 py-3 text-xs font-bold uppercase tracking-widest">Search +</button>
+        <div id="mobileMenu" class="hidden lg:hidden bg-black/90 border-t border-white/10 overflow-hidden transition-all duration-300 ease-in-out">
+            <nav class="flex flex-col px-6 py-8 space-y-6 text-xs font-bold uppercase tracking-[0.3em]">
+                <a href="index.html" class="text-yellow-500 border-l-2 border-yellow-500 pl-4">Home</a>
+                <a href="about.html" class="hover:text-yellow-500 transition pl-4">About</a>
+                <a href="portfolio.html" class="hover:text-yellow-500 transition pl-4">Portfolio</a>
+                <a href="blog.html" class="hover:text-yellow-500 transition pl-4">Blog</a>
+                <a href="shop.html" class="hover:text-yellow-500 transition pl-4">Shop</a>
+            </nav>
         </div>
     </header>
 
-    <section id="swiper" class="relative h-screen w-full flex flex-col justify-center items-center text-center text-white px-4 overflow-hidden">
+    <section id="swiper" class="h-screen w-full flex flex-col justify-center items-center text-center text-white px-4 overflow-hidden">
         
         <div class="swiper gallery-slider">
             <div class="swiper-wrapper">
@@ -202,53 +206,52 @@
                 SERVICES 
             </a>
         </div>
-
     </section>
 
-    <section id="services" class="py-24 bg-gray-200 px-6 md:px-16 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <section id="services" class="py-24 bg-gray-200 px-6 md:px-16 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center" style="margin-top: -7%;">
         <div>
-            <span class="text-blue-600 font-bold text-xs tracking-[0.3em] uppercase block mb-4 animate-on-scroll fade-in-up">Home Improvements</span>
+            <span class="text-yellow-600 font-bold text-xs tracking-[0.3em] uppercase block mb-4 animate-on-scroll fade-in-up">Home Improvements</span>
             <h2 class="text-4xl font-black uppercase leading-tight mb-6 animate-on-scroll fade-in-up delay-3">Top-Notch House <br> Remodeling Services</h2>
             <p class="text-gray-500 leading-relaxed mb-8 max-w-md animate-on-scroll fade-in-up delay-4">Professional architectural solutions and high-end remodeling for modern homeowners looking for quality and reliability.</p>
-            <button class="bg-blue-600 text-white px-6 py-3 font-bold text-xs tracking-widest hover:bg-blue-800 transition animate-on-scroll fade-in-up delay-4" style="border-radius: 12px;">ANALYZE +</button>
+            <button class="bg-yellow-600 text-white px-6 py-3 font-bold text-xs tracking-widest hover:bg-yellow-800 transition animate-on-scroll fade-in-up delay-4" style="border-radius: 12px;">ANALYZE +</button>
         </div>
         <div class="grid grid-cols-2 gap-6">
-            <div class="bg-white p-10 shadow-2xl border-t-4 border-blue-600 text-center group hover:-translate-y-2 transition-transform animate-on-scroll fade-in-up delay-2">
-                <i class="fa-solid fa-compass-drafting text-3xl text-blue-600 mb-4"></i>
+            <div class="bg-white p-8 shadow-2xl border-t-4 border-yellow-600 text-center group hover:-translate-y-2 transition-transform animate-on-scroll fade-in-up delay-4">
+                <i class="fa-solid fa-compass-drafting text-3xl text-yellow-600 mb-4"></i>
                 <h3 class="font-bold uppercase text-sm tracking-widest">Planning</h3>
             </div>
-            <div class="bg-gray-50 p-10 text-center border-t-4 border-transparent hover:border-blue-600 transition shadow-sm animate-on-scroll fade-in-up delay-2">
-                <i class="fa-solid fa-hammer text-3xl text-blue-600 mb-4"></i>
+            <div class="bg-gray-50 p-8 text-center border-t-4 border-transparent hover:border-yellow-600 transition shadow-sm animate-on-scroll fade-in-up delay-6">
+                <i class="fa-solid fa-hammer text-3xl text-yellow-600 mb-4"></i>
                 <h3 class="font-bold uppercase text-sm tracking-widest">Repairs</h3>
             </div>
-            <div class="bg-gray-50 p-10 text-center border-t-4 border-transparent hover:border-blue-600 transition shadow-sm animate-on-scroll fade-in-up delay-2">
-                <i class="fa-solid fa-couch text-3xl text-blue-600 mb-4"></i>
+            <div class="bg-gray-50 p-8 text-center border-t-4 border-transparent hover:border-yellow-600 transition shadow-sm animate-on-scroll fade-in-up delay-4">
+                <i class="fa-solid fa-couch text-3xl text-yellow-600 mb-4"></i>
                 <h3 class="font-bold uppercase text-sm tracking-widest">Interior</h3>
             </div>
-            <div class="bg-white p-10 shadow-2xl border-t-4 border-blue-600 text-center group hover:-translate-y-2 transition-transform animate-on-scroll fade-in-up delay-2">
-                <i class="fa-solid fa-droplet text-3xl text-blue-600 mb-4"></i>
+            <div class="bg-white p-8 shadow-2xl border-t-4 border-yellow-600 text-center group hover:-translate-y-2 transition-transform animate-on-scroll fade-in-up delay-6">
+                <i class="fa-solid fa-droplet text-3xl text-yellow-600 mb-4"></i>
                 <h3 class="font-bold uppercase text-sm tracking-widest">Plumbing</h3>
             </div>
         </div>
     </section>
 
     <section id="gallery" class="grid g-4 grid-cols-2 md:grid-cols-4 h-64 md:h-80 overflow-hidden animate-on-scroll fade-in-up delay-4">
-        <div class="relative group overflow-hidden border-r border-white">
+        <div class="relative group overflow-hidden  p-2">
            <a href="portfolio.html">
               <img src="img/16.jpeg" alt="Bedroom" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
            </a> 
         </div>
-        <div class="relative group overflow-hidden border-r border-white">
+        <div class="relative group overflow-hidden p-2">
             <a href="portfolio.html">
                <img src="img/7.jpeg" alt="Dining Area" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
             </a>
         </div>
-        <div class="relative group overflow-hidden border-r border-white">
+        <div class="relative group overflow-hidden p-2">
             <a href="portfolio.html">
                <img src="img/15.jpeg" alt="Minimalist Room" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
             </a>
         </div>
-        <div class="relative group overflow-hidden">
+        <div class="relative group overflow-hidden p-2">
             <a href="bathrooms.html">
                 <img src="img/4.jpeg" alt="Modern Bathroom" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
             </a>
@@ -257,7 +260,7 @@
 
 
     <section class="py-24 bg-gray-50 text-center px-6">
-        <span class="text-gray-400 font-bold text-xs tracking-widest uppercase block mb-4 animate-on-scroll fade-in-up">What Clients Say</span>
+        <span class="text-yellow-600 font-bold text-xs tracking-widest uppercase block mb-4 animate-on-scroll fade-in-up">What Clients Say</span>
         <h2 class="text-3xl font-black uppercase mb-12 animate-on-scroll fade-in-up delay-4">Customer Reviews and Testimonials fOR <br> home improvement</h2>
         <div class="max-w-3xl mx-auto italic text-gray-600 text-lg leading-loose">
 
@@ -268,7 +271,7 @@
             <div class="mt-8">
                 
                 <h4 class="font-black uppercase text-sm tracking-widest text-black animate-on-scroll fade-in-up delay-4">Jane Doe</h4>
-                <p class="text-xs text-blue-600 font-bold uppercase mt-1 animate-on-scroll fade-in-up delay-3">Home Owner</p>
+                <p class="text-xs text-yellow-600 font-bold uppercase mt-1 animate-on-scroll fade-in-up delay-3">Home Owner</p>
             </div>
         </div>
     </section>
@@ -279,7 +282,7 @@
         </div>
 
         <div class="w-full md:w-7/12">
-            <span class="text-blue-600 font-bold text-xs tracking-[0.4em] uppercase block mb-4 animate-on-scroll fade-in-up">We Improve Your Home</span>
+            <span class="text-yellow-600 font-bold text-xs tracking-[0.4em] uppercase block mb-4 animate-on-scroll fade-in-up">We Improve Your Home</span>
             <h2 class="text-4xl md:text-5xl font-black uppercase leading-tight mb-8 animate-on-scroll fade-in-up delay-4">Inspiring Ideas and Expert <br> Advice for Your House</h2>
             
             <p class="text-gray-500 text-lg leading-relaxed mb-10 max-w-xl animate-on-scroll fade-in-up delay-3">
@@ -293,28 +296,40 @@
     </section>
 
     <section class="bg-gray-300" style="margin-top: -5%;">
-        <div class="container">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-10 border-t border-gray-100" style="justify-content: center; padding-bottom: 3%;">
-                <div class="text-center md:text-left">
-                    <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll fade-in-up delay-4">93+</h3>
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest animate-on-scroll fade-in-up">Projects</p>
-                </div>
-                <div class="text-center md:text-left">
-                    <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll fade-in-up delay-3">65+</h3>
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest animate-on-scroll fade-in-up">People</p>
-                </div>
-                <div class="text-center md:text-left">
-                    <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll fade-in-up delay-4">10+</h3>
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest animate-on-scroll fade-in-up">Years</p>
-                </div>
-                <div class="text-center md:text-left">
-                    <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll fade-in-up delay-3">15+</h3>
-                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest animate-on-scroll fade-in-up">Offices</p>
-                </div>
+    <div class="container">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-10 border-t border-gray-100" style="justify-content: center; padding-bottom: 3%;">
+            
+            <div class="text-center md:text-left">
+                <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll">
+                    <span class="counter" data-target="93">0</span>+
+                </h3>
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Projects</p>
             </div>
+
+            <div class="text-center md:text-left">
+                <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll">
+                    <span class="counter" data-target="65">0</span>+
+                </h3>
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">People</p>
+            </div>
+
+            <div class="text-center md:text-left">
+                <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll">
+                    <span class="counter" data-target="10">0</span>+
+                </h3>
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Years</p>
+            </div>
+
+            <div class="text-center md:text-left">
+                <h3 class="text-5xl font-black text-gray-900 mb-2 animate-on-scroll">
+                    <span class="counter" data-target="15">0</span>+
+                </h3>
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Offices</p>
+            </div>
+
         </div>
-         
-    </section>
+    </div>
+</section>
 
     <section class="relative h-[75vh] w-full overflow-hidden flex items-center justify-center">
         <div class="absolute inset-0 z-0">
@@ -343,7 +358,7 @@
    <section class="py-5 bg-white">
         <div class="container py-5">
             <div class="text-center mb-5">
-                <span class="sub-label animate-on-scroll fade-in-up">Our Blog</span>
+                <span class="sub-label text-yellow-600 animate-on-scroll fade-in-up">Our Blog</span>
                 <h2 class="section-title mt-2 animate-on-scroll fade-in-up delay-1">Learn More About Our Company <br> By Reading The News</h2>
             </div>
 
@@ -398,11 +413,9 @@
                         <div class="col-md-6"><input type="text" class="form-control form-control-custom" placeholder="NAME"></div>
                         <div class="col-md-6"><input type="email" class="form-control form-control-custom" placeholder="EMAIL"></div>
                         <div class="col-12"><textarea class="form-control form-control-custom" rows="2" placeholder="MESSAGE"></textarea></div>
-                        <div class="col-12"><button class="btn btn-primary rounded-4 px-2 py-3 fw-bold text-uppercase w-50 mt-3">Send Message</button></div>
+                        <div class="col-12"><button class="btn bg-yellow-600 hover:bg-yellow-500 text-white rounded-4 px-2 py-3 fw-bold text-uppercase w-50 mt-3">Send Message</button></div>
                     </form>
-
                 </div>
-
             </div>
         </div>
     </section>
@@ -486,7 +499,7 @@
 
 
 
-        const menuBtn = document.getElementById('menu-btn');
+        /*const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = menuBtn.querySelector('i');
 
@@ -503,7 +516,21 @@
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
             }
-        });
+        });*/
+
+        function toggleDropdown() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                // Slight rotation effect for the icon
+                icon.style.transform = 'rotate(90deg)';
+            } else {
+                menu.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
 
 
         const swiper = new Swiper(".gallery-slider", {
@@ -546,6 +573,40 @@
             animateOnScroll.observe(element);
         });
 
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 150; // Lower is faster
+
+    const startCounters = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 10);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+                // Stop observing once the animation is done
+                observer.unobserve(counter);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(startCounters, {
+        threshold: 0.2 // Triggers when 50% of the element is visible
+    });
+
+    counters.forEach(counter => observer.observe(counter));
+});
 
     </script>
     
